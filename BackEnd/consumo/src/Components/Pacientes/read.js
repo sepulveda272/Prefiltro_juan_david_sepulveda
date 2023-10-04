@@ -1,8 +1,9 @@
 import '../navbar/navbr.css'
 import axios from 'axios';
-import React,{useEffect, useState} from 'react';
+import React,{useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import Perfil from '../../assets/fotoPerfil.jpeg'
+import Update from './update.js';
 
 export default function Read(){
     const [apiData, setApiData] = useState([]);
@@ -45,9 +46,12 @@ export default function Read(){
         })
     }
 
-    return(
+    /* const borrarLocalStorage = ()=>{
+        localStorage.clear();
+    } */
 
-        <div className='content'>
+    return(
+        <div>
             <nav>
                 <div className='item-nav1'> 
                     <i className="fas fa-user"></i>
@@ -99,7 +103,7 @@ export default function Read(){
                                         <td>{data.nombreBacteriologo}</td>
                                         <td>{data.hora}</td>
                                         <td>
-                                        <button className="btn update" style={{backgroundColor: "#937DE9"}} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <button onClick={()=>setData(data)} className="btn update" style={{backgroundColor: "#937DE9"}} data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             Actualizar
                                         </button>
                                         </td>
@@ -112,6 +116,7 @@ export default function Read(){
                     </tbody>
                   </table>
             </div>
+            <Update />
         </div>
     )
 }

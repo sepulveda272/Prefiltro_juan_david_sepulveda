@@ -23,15 +23,3 @@
             <Link to='/resultado'>
                 Resultados
             </Link>
-
-            {/* <Table.Row>
-                                        <Table.Cell>{data.idPaciente    }</Table.Cell>
-                                        <Table.Cell>{data.nombre}</Table.Cell>
-                                        <Table.Cell>{data.edad}</Table.Cell>
-                                        <Table.Cell>{data.nombreBacteriologo}</Table.Cell>
-                                        <Table.Cell>{data.hora}</Table.Cell>
-                                        <Link to = "/update">
-                                            <Table.Cell><Button onClick={()=>setData(data)}>Actualizar</Button></Table.Cell>
-                                        </Link>
-                                        <Table.Cell><Button onClick={()=>onDelete(data._id)}>Eliminar</Button></Table.Cell>
-                                    </Table.Row> */}

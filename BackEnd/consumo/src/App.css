@@ -1,7 +1,6 @@
 * {
     margin: 0;
-    padding: 0;/* 
-    height: 100%; */
+    padding: 0;
     overflow: hidden;
 }
 
@@ -23,9 +22,7 @@
 /* parte derecha */
 
 .taba{
-    /* Establecer una altura máxima para la sección */
-    max-height: 800px; /* Ajusta este valor según tus necesidades */
-    /* Establecer un overflow para habilitar el scroll */
+    max-height: 800px;
     overflow-y: auto;
     height: 800px;
 }

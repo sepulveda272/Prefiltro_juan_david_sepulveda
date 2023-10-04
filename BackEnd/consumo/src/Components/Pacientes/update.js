@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React,{useEffect, useState} from 'react';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import {Form} from 'semantic-ui-react';
 
 export default function Update(){
     let history = useHistory();
@@ -41,7 +43,7 @@ export default function Update(){
             examen
         }
         ).then(()=>{
-            history.push('/')
+            window.location.reload();
         })
     }
     return(
@@ -53,19 +55,19 @@ export default function Update(){
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="" method="post" class="formularios" id="formEditPaciente">
+                <Form>
                     <input type="hidden" id="idEdit" name="" />
                     <div class="mb-3">
                         <label for="nombreEdit" class="form-label">Nombre del paciente : </label>
-                        <input type="text" class="form-control" id="nombreEdit" />
+                        <input type="text" class="form-control" id="nombreEdit" value={nombre} onChange={(e) => setNombre(e.target.value)}/>
                     </div>
                     <div class="mb-3">
                         <label for="edadEdit" class="form-label">Edad : </label>
-                        <input type="number" class="form-control" id="edadEdit" />
+                        <input type="number" class="form-control" id="edadEdit" value={edad} onChange={(e) => setEdad(e.target.value)} />
                     </div>
                     <div class="mb-3">
                         <label for="sexoEdit" class="form-label">Sexo : </label>
-                        <select id="sexoEdit" class="form-select">
+                        <select id="sexoEdit" class="form-select" value={sexo} onChange={(e) => setSexo(e.target.value)} >
                             <option selected>Genero...</option>
                             <option>Hombre</option>
                             <option>Mujer</option>
@@ -74,27 +76,27 @@ export default function Update(){
                     </div>
                     <div class="mb-3">
                         <label for="direccionEdit" class="form-label">Direccion : </label>
-                        <input type="text" class="form-control" id="direccionEdit" />
+                        <input type="text" class="form-control" id="direccionEdit" value={direccion} onChange={(e) => setDirecion(e.target.value)} />
                     </div>
                     <div class="mb-3">
                         <label for="celularEdit" class="form-label">Celular : </label>
-                        <input type="number" class="form-control" id="celularEdit" />
+                        <input type="number" class="form-control" id="celularEdit" value={celular} onChange={(e) => setCelular(e.target.value)} />
                     </div>
                     <div class="mb-3">
                         <label for="fechaEdit" class="form-label">Fecha : </label>
-                        <input type="date" class="form-control" id="fechaEdit" />
+                        <input type="date" class="form-control" id="fechaEdit" value={fecha} onChange={(e) => setFecha(e.target.value)} />
                     </div>
                     <div class="mb-3">
                         <label for="horaEdit" class="form-label">Hora : </label>
-                        <input type="time" class="form-control" id="horaEdit" />
+                        <input type="time" class="form-control" id="horaEdit" value={hora} onChange={(e) => setHora(e.target.value)} />
                     </div>
                     <div class="mb-3">
                         <label for="nombreBacEdit" class="form-label">nombre Bacteriologo : </label>
-                        <input type="text" class="form-control" id="nombreBacEdit" />
+                        <input type="text" class="form-control" id="nombreBacEdit" value={nombreBacteriologo} onChange={(e) => setNombreBacteriologo(e.target.value)} />
                     </div>
                     <div class="mb-3">
                         <label for="examenEdit" class="form-label">Examen : </label>
-                        <select id="examenEdit" class="form-select">
+                        <select id="examenEdit" class="form-select" value={examen} onChange={(e) => setExamen(e.target.value)}>
                             <option selected>Examen</option>
                             <option>Cuadro Hematico</option>
                             <option>Glisemia</option>
@@ -103,9 +105,9 @@ export default function Update(){
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary btnForm" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary btnForm">Actualizar</button>
+                        <Link to='/'><button type='submit' onClick={updateAPIData} class="btn btn-primary btnForm">Actualizar</button></Link>
                     </div>
-                </form>
+                </Form>
             </div>
             </div>
         </div>

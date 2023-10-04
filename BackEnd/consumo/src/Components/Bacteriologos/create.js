@@ -3,7 +3,7 @@ import React,{useState} from 'react';
 import {Button, Form} from 'semantic-ui-react';
 import { useHistory } from 'react-router';
 
-export default function Create(){
+export default function CreateB(){
     let history = useHistory();
     const [nombre, setNombre ] = useState('');
     const [edad, setEdad ] = useState('');

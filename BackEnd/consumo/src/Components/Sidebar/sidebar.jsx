@@ -17,6 +17,13 @@ function Sidebar(){
                   </Link>
                 </div>
               </div>
+              <div id="uno">
+                <div className='active'>
+                  <Link to="/bacteriologos">
+                    <img src={House} className='icon icon-svg' alt='nose' />
+                  </Link>
+                </div>
+              </div>
             </div>
             <div id="hola1">
               <div id="tres">

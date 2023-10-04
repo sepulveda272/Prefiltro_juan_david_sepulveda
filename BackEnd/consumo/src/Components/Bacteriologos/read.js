@@ -42,7 +42,7 @@ export default function ReadB(){
     return(
         <div>
             <h2 className='main-header'>Bacteriologos</h2>
-            <Link to="/create">
+            <Link to="/createB">
               <Button>Registrar Bacteriologo</Button>
             </Link>
             <Table singleLine>

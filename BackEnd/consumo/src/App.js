@@ -5,12 +5,14 @@ import Update from './Components/Pacientes/update.js';
 import Create from './Components/Pacientes/create.js';
 import ReadB from './Components/Bacteriologos/read';
 import Sidebar from './Components/Sidebar/sidebar';
+import CreateB from './Components/Bacteriologos/create';
 
 function App() {
   return (
-    <Router>
+    <div className='contenedor'>
+      <Router>
       <Sidebar />
-      <div className="main">
+      <div className='content'>
         <div>
           <Route path ='/create' component={Create}>
             
@@ -22,7 +24,12 @@ function App() {
           </Route>
         </div>
         <div>
-          <Route path ='/update' component={Update}>
+          <Route path ='/' component={Update}>
+            
+          </Route>
+        </div>
+        <div>
+          <Route path ='/createB' component={CreateB}>
             
           </Route>
         </div>
@@ -33,7 +40,7 @@ function App() {
         </div>
       </div>
     </Router>
-    
+    </div>  
   );
 }
 
