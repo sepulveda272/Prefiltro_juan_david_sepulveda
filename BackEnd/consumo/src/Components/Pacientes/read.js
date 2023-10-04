@@ -45,6 +45,10 @@ export default function Read(){
 
     return(
         <div>
+            <h2 className='main-header'>Pacientes</h2>
+            <Link to="/create">
+              <Button>Registrar Paciente</Button>
+            </Link>
             <Table singleLine>
                 <Table.Header>
                     <Table.Row>
