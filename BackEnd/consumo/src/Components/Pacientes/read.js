@@ -1,7 +1,8 @@
+import '../navbar/navbr.css'
 import axios from 'axios';
 import React,{useEffect, useState} from 'react';
-import {Table, Button} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
+import Perfil from '../../assets/fotoPerfil.jpeg'
 
 export default function Read(){
     const [apiData, setApiData] = useState([]);
@@ -15,8 +16,9 @@ export default function Read(){
     },[]);
 
     const setData = (data) => {
-        let {_id,nombre,edad, sexo, direccion, celular,fecha,hora,nombreBacteriologo,examen,estado} = data;
+        let {_id,idPaciente,nombre,edad, sexo, direccion, celular,fecha,hora,nombreBacteriologo,examen,estado} = data;
         localStorage.setItem('ID',_id);
+        localStorage.setItem('Id',idPaciente);
         localStorage.setItem('Nombre',nombre);
         localStorage.setItem('Edad',edad);
         localStorage.setItem('Sexo',sexo);
@@ -44,50 +46,72 @@ export default function Read(){
     }
 
     return(
-        <div>
-            <h2 className='main-header'>Pacientes</h2>
-            <Link to="/create">
-              <Button>Registrar Paciente</Button>
-            </Link>
-            <Table singleLine>
-                <Table.Header>
-                    <Table.Row>
-                        <Table.HeaderCell>Nombre</Table.HeaderCell>
-                        <Table.HeaderCell>Edad</Table.HeaderCell>
-                        <Table.HeaderCell>Sexo</Table.HeaderCell>
-                        <Table.HeaderCell>Direccion</Table.HeaderCell>
-                        <Table.HeaderCell>Celular</Table.HeaderCell>
-                        <Table.HeaderCell>Fecha</Table.HeaderCell>
-                        <Table.HeaderCell>Hora</Table.HeaderCell>
-                        <Table.HeaderCell>NombreBacteriologo</Table.HeaderCell>
-                        <Table.HeaderCell>Examen</Table.HeaderCell>
-                        <Table.HeaderCell>Actualizar</Table.HeaderCell>
-                        <Table.HeaderCell>Eliminar</Table.HeaderCell>
-                    </Table.Row>
-                </Table.Header>
-                <Table.Body>
-                    {apiData.map((data)=>{
-                            return(
-                                <Table.Row>
-                                    <Table.Cell>{data.nombre}</Table.Cell>
-                                    <Table.Cell>{data.edad}</Table.Cell>
-                                    <Table.Cell>{data.sexo}</Table.Cell>
-                                    <Table.Cell>{data.direccion}</Table.Cell>
-                                    <Table.Cell>{data.celular}</Table.Cell>
-                                    <Table.Cell>{data.fecha}</Table.Cell>
-                                    <Table.Cell>{data.hora}</Table.Cell>
-                                    <Table.Cell>{data.nombreBacteriologo}</Table.Cell>
-                                    <Table.Cell>{data.examen}</Table.Cell>
-                                    <Link to = "/update">
-                                        <Table.Cell><Button onClick={()=>setData(data)}>Actualizar</Button></Table.Cell>
-                                    </Link>
-                                    <Table.Cell><Button onClick={()=>onDelete(data._id)}>Eliminar</Button></Table.Cell>
-                                </Table.Row>
-                            )
-                        })
-                    }
-                </Table.Body>
-            </Table>
+
+        <div className='content'>
+            <nav>
+                <div className='item-nav1'> 
+                    <i className="fas fa-user"></i>
+                    <h1>Pacientes-c</h1>
+                </div>
+                <div className="item-nav2">
+                    <div className="d-flex flex-column align-items-end">
+                        <h4 className="nombreP">Jairo Sepulveda</h4>
+                        <div className="cerrarSesion">
+                            <div id="iconos">
+                                <i id="iconoAbajo" className="fa-solid fa-angle-down" style={{fontSize: "30px"}}></i>
+                                <i id="iconoArriba" className="fa-solid fa-angle-up" style={{fontSize: "30px", display: "none"}}></i>
+                            </div>
+                            <p className="trabajo">Bacteriologo</p>
+                        </div>
+                    </div>
+                    <div className="contenedorPerfil">
+                        <img style={{height: "100%"}} id="fotoPerfil" src={Perfil} alt="" />
+                    </div>
+                </div>
+            </nav>
+            <div className="navAbajo">
+                <div id="buscar" className="input-group mb-3">
+                    <input type="text" className="form-control" placeholder="Search..." aria-describedby="button-addon2" />
+                    <button className="btn" type="button"><i className="fa-solid fa-magnifying-glass"></i></button>
+                </div>  
+                <Link to="/create" className="NEW btn btn-primary"><p>Nuevo +</p></Link>
+            </div>
+            <div className="taba">
+                <table className="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Bacteriologo</th>
+                        <th scope="col">Hora.Atencion</th>
+                        <th scope="col">Actualizar</th>
+                        <th scope="col">Borrar</th>
+                      </tr>
+                    </thead>
+                    <tbody className="contenido">
+                        {apiData.map((data)=>{
+                                return(
+                                    <tr>
+                                        <th scope="row">{data.idPaciente}</th>
+                                        <td>{data.nombre}</td>
+                                        <td>{data.edad}</td>
+                                        <td>{data.nombreBacteriologo}</td>
+                                        <td>{data.hora}</td>
+                                        <td>
+                                        <button className="btn update" style={{backgroundColor: "#937DE9"}} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Actualizar
+                                        </button>
+                                        </td>
+                                        <td><button class="btn btn-danger eliminar" onClick={()=>onDelete(data._id)}>Borrar</button></td>
+                                    </tr>
+                                    
+                                )
+                            })
+                        }
+                    </tbody>
+                  </table>
+            </div>
         </div>
     )
 }

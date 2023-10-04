@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React,{useEffect, useState} from 'react';
-import {Button, Form} from 'semantic-ui-react';
 import { useHistory } from 'react-router';
 
 export default function Update(){
@@ -46,46 +45,70 @@ export default function Update(){
         })
     }
     return(
-        <div>
-            <Form className='create-form'>
-                <Form.Field>
-                    <label>Nombre</label>
-                    <input placeholder='Nombre' value={nombre} onChange={(e) => setNombre(e.target.value)}></input>
-                </Form.Field>
-                <Form.Field>
-                    <label>Edad</label>
-                    <input placeholder='Edad' value={edad} onChange={(e) => setEdad(e.target.value)}></input>
-                </Form.Field>
-                <Form.Field>
-                    <label>Sexo</label>
-                    <input placeholder='Sexo' value={sexo} onChange={(e) => setSexo(e.target.value)}></input>
-                </Form.Field>
-                <Form.Field>
-                    <label>Direccion</label>
-                    <input placeholder='Direccion' value={direccion} onChange={(e) => setDirecion(e.target.value)}></input>
-                </Form.Field>
-                <Form.Field>
-                    <label>Celular</label>
-                    <input placeholder='Celular' value={celular} onChange={(e) => setCelular(e.target.value)}></input>
-                </Form.Field>
-                <Form.Field>
-                    <label>Fecha</label>
-                    <input placeholder='Fecha' value={fecha} onChange={(e) => setFecha(e.target.value)}></input>
-                </Form.Field>
-                <Form.Field>
-                    <label>Hora</label>
-                    <input placeholder='Edad' value={hora} onChange={(e) => setHora(e.target.value)}></input>
-                </Form.Field>
-                <Form.Field>
-                    <label>Nombre Bacteriologo</label>
-                    <input placeholder='Nombre Bacteriologo' value={nombreBacteriologo} onChange={(e) => setNombreBacteriologo(e.target.value)}></input>
-                </Form.Field>
-                <Form.Field>
-                    <label>Examen</label>
-                    <input placeholder='Examen' value={examen} onChange={(e) => setExamen(e.target.value)}></input>
-                </Form.Field>
-                <Button type='submit' onClick={updateAPIData}>Actualizar</Button>
-            </Form>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" class="formularios" id="formEditPaciente">
+                    <input type="hidden" id="idEdit" name="" />
+                    <div class="mb-3">
+                        <label for="nombreEdit" class="form-label">Nombre del paciente : </label>
+                        <input type="text" class="form-control" id="nombreEdit" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="edadEdit" class="form-label">Edad : </label>
+                        <input type="number" class="form-control" id="edadEdit" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="sexoEdit" class="form-label">Sexo : </label>
+                        <select id="sexoEdit" class="form-select">
+                            <option selected>Genero...</option>
+                            <option>Hombre</option>
+                            <option>Mujer</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="direccionEdit" class="form-label">Direccion : </label>
+                        <input type="text" class="form-control" id="direccionEdit" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="celularEdit" class="form-label">Celular : </label>
+                        <input type="number" class="form-control" id="celularEdit" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechaEdit" class="form-label">Fecha : </label>
+                        <input type="date" class="form-control" id="fechaEdit" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="horaEdit" class="form-label">Hora : </label>
+                        <input type="time" class="form-control" id="horaEdit" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombreBacEdit" class="form-label">nombre Bacteriologo : </label>
+                        <input type="text" class="form-control" id="nombreBacEdit" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="examenEdit" class="form-label">Examen : </label>
+                        <select id="examenEdit" class="form-select">
+                            <option selected>Examen</option>
+                            <option>Cuadro Hematico</option>
+                            <option>Glisemia</option>
+                            <option>Perfil Lipidico</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btnForm" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary btnForm">Actualizar</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
         </div>
     )
 }
