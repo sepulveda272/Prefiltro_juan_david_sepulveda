@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import House from '../../assets/hogar.svg';
 import logo from '../../assets/logoRVG.png';
 import Virus from '../../assets/virus2.svg';
+import Estoscopio from '../../assets/stetoscopio.svg';
 
 function Sidebar(){
     return(
@@ -23,6 +24,13 @@ function Sidebar(){
                   <Link to="/bacteriologos">
                     <img src={Virus} className='icon icon-svg' alt='nose'></img>
                   </Link>
+                </div>
+              </div>
+              <div id="uno">
+                <div className='active'>
+                <Link to='/examenC'>
+                  <img src={Estoscopio} className='icon icon-svg' alt='nose' />
+                </Link>
                 </div>
               </div>
             </div>

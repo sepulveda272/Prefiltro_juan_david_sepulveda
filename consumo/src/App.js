@@ -7,6 +7,7 @@ import ReadB from './Components/Bacteriologos/read';
 import Sidebar from './Components/Sidebar/sidebar';
 import CreateB from './Components/Bacteriologos/create';
 import UpdateB from './Components/Bacteriologos/update';
+import ReadCuadro from './Components/Examenes/CuadroHematico/read';
 
 function App() {
   return (
@@ -42,6 +43,11 @@ function App() {
         <div>
           <Route path ='/' component={UpdateB}>
             
+          </Route>
+        </div>
+        <div>
+          <Route path ='/examenC' component={ReadCuadro}>
+
           </Route>
         </div>
       </div>
