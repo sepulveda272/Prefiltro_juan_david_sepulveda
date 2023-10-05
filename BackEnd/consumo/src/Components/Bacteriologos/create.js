@@ -2,6 +2,7 @@ import axios from 'axios';
 import React,{useState} from 'react';
 import {Button, Form} from 'semantic-ui-react';
 import { useHistory } from 'react-router';
+import Perfil from '../../assets/fotoPerfil.jpeg'
 
 export default function CreateB(){
     let history = useHistory();

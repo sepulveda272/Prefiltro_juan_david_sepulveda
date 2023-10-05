@@ -6,6 +6,7 @@ import Create from './Components/Pacientes/create.js';
 import ReadB from './Components/Bacteriologos/read';
 import Sidebar from './Components/Sidebar/sidebar';
 import CreateB from './Components/Bacteriologos/create';
+import UpdateB from './Components/Bacteriologos/update';
 
 function App() {
   return (
@@ -35,6 +36,11 @@ function App() {
         </div>
         <div>
           <Route path='/bacteriologos' component={ReadB}>
+            
+          </Route>
+        </div>
+        <div>
+          <Route path ='/' component={UpdateB}>
             
           </Route>
         </div>
