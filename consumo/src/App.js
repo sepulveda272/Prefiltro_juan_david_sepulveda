@@ -8,6 +8,7 @@ import Sidebar from './Components/Sidebar/sidebar';
 import CreateB from './Components/Bacteriologos/create';
 import UpdateB from './Components/Bacteriologos/update';
 import ReadCuadro from './Components/Examenes/CuadroHematico/read';
+import ReadgLISEMIA from './Components/Examenes/Glisemia/read';
 
 function App() {
   return (
@@ -47,6 +48,11 @@ function App() {
         </div>
         <div>
           <Route path ='/examenC' component={ReadCuadro}>
+
+          </Route>
+        </div>
+        <div>
+          <Route path ='/examenG' component={ReadgLISEMIA}>
 
           </Route>
         </div>
