@@ -1,6 +1,6 @@
-const Bacteriologo = require('../models/Bacteriologo')
+import Bacteriologo from '../models/Bacteriologo.js'
 
-const getBacteriologo = async (req,res) =>{
+export const getBacteriologo = async (req,res) =>{
     try {
         const bacteriologo = await Bacteriologo.findOne({_id:req.params.id})
         res.json(bacteriologo);
@@ -9,7 +9,7 @@ const getBacteriologo = async (req,res) =>{
     }
 }
 
-const getBacteriologos = async(req,res)=>{
+export const getBacteriologos = async(req,res)=>{
     const { hasta, desde } = req.query;
     const query = {estado: true}
     const [ total, bacteriologos ] = await Promise.all([
@@ -25,7 +25,7 @@ const getBacteriologos = async(req,res)=>{
     })
 }
 
-const postBacteriologo = async(req, res ) => {
+export const postBacteriologo = async(req, res ) => {
     const {nombre, edad, email, experiencia, cedula,imagen} = req.body;
     const bacteriologo = new Bacteriologo({nombre, edad, email, experiencia, cedula, imagen});
 
@@ -50,7 +50,7 @@ const postBacteriologo = async(req, res ) => {
     })
 }
 
-const deleteBacteriologo = async (req, res)=>{
+export const deleteBacteriologo = async (req, res)=>{
     const {id} = req.params
     const bacteriologo = await Bacteriologo.findByIdAndUpdate( id, { estado: false } );
     return res.status(200).json({bacteriologo,
@@ -58,7 +58,7 @@ const deleteBacteriologo = async (req, res)=>{
     });
 }
 
-const updateBacteriologo = async(req, res)=>{
+export const updateBacteriologo = async(req, res)=>{
     const {id} = req.params;
     const nombre = req.body.nombre;
     const edad = req.body.edad;
@@ -73,6 +73,3 @@ const updateBacteriologo = async(req, res)=>{
 }
 
 
-module.exports = {
-    getBacteriologo,getBacteriologos,postBacteriologo,deleteBacteriologo,updateBacteriologo
-}

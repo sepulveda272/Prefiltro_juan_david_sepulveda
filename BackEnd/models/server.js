@@ -1,6 +1,15 @@
-const express = require('express');
-const cors = require('cors');
-const {dbConnection} = require('../database/config.js');
+import express from 'express';
+import cors from 'cors';
+import {dbConnection} from '../database/config.js';
+import swaggerUI from 'swagger-ui-express';
+import swaggerSpec from '../swaggerConfig.js';
+
+import pacientes from '../routes/pacientes.routes.js';
+import bacteriologo from '../routes/bacteriologo.routes.js';
+import cuadroHematico from '../routes/cuadroHematico.routes.js';
+import glisemia from '../routes/glisemia.routes.js';
+import perfilLipidico from '../routes/perfilLipidico.routes.js';
+import search from '../routes/search.routes.js';
 
 class Server{
     constructor(){
@@ -8,6 +17,10 @@ class Server{
         this.port = process.env.PORT;
         this.pacientesPath = "/api/pacientes";
         this.bacteriologosPath = "/api/bacteriologos";
+        this.cuadroHematicoPath = "/api/cuadroHematico";
+        this.glisemiaPath = "/api/glisemia";
+        this.perfilLipidicoPath = "/api/perfilLipidico";
+        this.searchPath = "/api/search";
         this.connectDB();
         this.middleware();
         this.routes();
@@ -23,8 +36,13 @@ class Server{
     }
 
     routes(){
-        this.app.use(this.pacientesPath, require('../routes/pacientes.routes.js'));
-        this.app.use(this.bacteriologosPath, require('../routes/bacteriologo.routes.js'));
+        this.app.use(this.pacientesPath, pacientes);
+        this.app.use(this.bacteriologosPath, bacteriologo);
+        this.app.use(this.cuadroHematicoPath, cuadroHematico);
+        this.app.use(this.glisemiaPath, glisemia);
+        this.app.use(this.perfilLipidicoPath, perfilLipidico);
+        this.app.use(this.searchPath, search);
+        this.app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
     }
 
     listen(){
@@ -34,4 +52,4 @@ class Server{
     }
 }
 
-module.exports = Server;
+export default Server;

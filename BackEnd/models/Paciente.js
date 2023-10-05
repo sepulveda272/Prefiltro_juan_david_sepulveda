@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose');
+import {Schema, model} from 'mongoose';
 
 const PacienteSchema = Schema({
     idPaciente: {
@@ -64,5 +64,5 @@ PacienteSchema.pre('save', async function (next) {
     }
     next();
   });
-
-module.exports = model('Paciente', PacienteSchema);
+const Paciente = model('Paciente', PacienteSchema);
+export default Paciente

@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose');
+import {Schema, model} from 'mongoose';
 
 const BacteriologoSchema = Schema({
     nombre:{
@@ -36,5 +36,5 @@ const BacteriologoSchema = Schema({
         default: true
     }
 });
-
-module.exports = model('Bacteriologo', BacteriologoSchema);
+const Bacteriologo = model('Bacteriologo', BacteriologoSchema);
+export default Bacteriologo

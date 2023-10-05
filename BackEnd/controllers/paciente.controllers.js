@@ -1,6 +1,6 @@
-const Paciente = require('../models/Paciente')
+import Paciente from '../models/Paciente.js'
 
-const getPaciente = async (req,res) =>{
+export const getPaciente = async (req,res) =>{
     try {
         const paciente = await Paciente.findOne({idPaciente:req.params.id})
         res.json(paciente);
@@ -9,7 +9,7 @@ const getPaciente = async (req,res) =>{
     }
 }
 
-const getPacientes = async(req,res)=>{
+export const getPacientes = async(req,res)=>{
     const { hasta, desde } = req.query;
     const query = {estado: true}
     const [ total,pacientes ] = await Promise.all([
@@ -25,7 +25,7 @@ const getPacientes = async(req,res)=>{
     })
 }
 
-const postPaciente = async(req, res ) => {
+export const postPaciente = async(req, res ) => {
     const {nombre, edad, sexo, direccion, celular,fecha,hora,nombreBacteriologo,examen} = req.body;
     const paciente = new Paciente({nombre, edad, sexo, direccion, celular,fecha,hora,nombreBacteriologo,examen});
 
@@ -43,7 +43,7 @@ const postPaciente = async(req, res ) => {
     })
 }
 
-const deletePaciente = async (req, res)=>{
+export const deletePaciente = async (req, res)=>{
     const {id} = req.params
     const paciente = await Paciente.findByIdAndUpdate( id, { estado: false } );
     return res.status(200).json({paciente,
@@ -51,7 +51,7 @@ const deletePaciente = async (req, res)=>{
     });
 }
 
-const updatePaciente = async(req, res)=>{
+export const updatePaciente = async(req, res)=>{
     const {id} = req.params;
     const nombre = req.body.nombre;
     const edad = req.body.edad;
@@ -70,8 +70,4 @@ const updatePaciente = async(req, res)=>{
 
 const patchPaciente = (req, res)=>{
     res.json({"message":"patch api"})
-}
-
-module.exports = {
-    getPaciente,getPacientes,postPaciente,deletePaciente,updatePaciente,patchPaciente
 }

@@ -41,7 +41,7 @@ export default function Create() {
 
   return (
     <div>
-      <div>
+    <div>
       <div>
             <nav>
                 <div class="item-nav1">
@@ -64,7 +64,7 @@ export default function Create() {
                     </div>
                 </div>
             </nav>
-            </div>
+          </div>
       </div>
       <div className="backgrouncito">
         <p>Nuevo paciente</p>
