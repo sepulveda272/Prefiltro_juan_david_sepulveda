@@ -1,4 +1,4 @@
-import '../../navbar/examenes/navbarP.css';
+import '../../navbar/examenes/navbarP.css'
 import axios from 'axios';
 import React,{useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
@@ -39,14 +39,14 @@ export default function ReadPerfil(){
     return(
         <div>
             <NavbarExamenesss />
-            <div id="informacion">
-                <div id="tabla1">
-                    <div id="botones-grandes">
-                        <Link to="/examenC"><button id="gris">Cuadro Hematico</button></Link>
-                        <Link to="/examenG"><button id="gris">Glisemia</button></Link>
-                        <Link to="/examenP"><button style={{backgroundColor: "#88C14D"}} id="naranja">Perfil Lipidico</button></Link>
+            <div id="informacionP">
+                <div id="tabla1P">
+                    <div id="botones-grandesP">
+                        <Link to="/examenC"><button id="grisP">Cuadro Hematico</button></Link>
+                        <Link to="/examenG"><button id="grisP">Glisemia</button></Link>
+                        <Link to="/examenP"><button style={{backgroundColor: "#88C14D"}} id="naranjaP">Perfil Lipidico</button></Link>
                     </div>
-                    <div id="nombre-resultado">
+                    <div id="nombre-resultadoP">
                         <table className="table">
                             <thead>
                               <tr>
@@ -71,7 +71,7 @@ export default function ReadPerfil(){
                         </table>
                     </div>
                 </div>
-                <div id="tabla2">
+                <div id="tabla2P">
                     <CreatePer />
                 </div>
             </div>

@@ -2,8 +2,8 @@ import '../../navbar/examenes/navbarC.css';
 import axios from 'axios';
 import React,{useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
-import CreateCu from './create';
 import NavbarExamenesss from '../../navbar/navbar';
+import CreateCu from './create';
 
 export default function ReadCuadro(){
     const [apiData, setApiData] = useState([]);

@@ -23,7 +23,7 @@
 }
 
 /* parte derecha */
-#informacion{
+#informacionP{
     height: 90%;
     width: 100%;
     display: flex;
@@ -31,11 +31,11 @@
     gap: 1rem;
 }
 
-#tabla1{
+#tabla1P{
     width: 50%;
     height: 100%;
 }
-#botones-grandes{
+#botones-grandesP{
     width: 100%;
     height: 12%;
     display: flex;
@@ -47,7 +47,7 @@ nav{
     height: 25%;
 }
 
-#naranja{
+#naranjaP{
     height: 4rem;
     width: 11rem;
     border: none;
@@ -57,7 +57,7 @@ nav{
     font-weight: 700;
     letter-spacing: 1px;
 }
-#gris{
+#grisP{
     height: 4rem;
     width: 11rem;
     border: none;
@@ -68,35 +68,34 @@ nav{
     letter-spacing: 1px;
 }
 
-#nombre-resultado{
+#nombre-resultadoP{
     height: 80%;
     width: 100%;
-    border: 1px solid red;
 }
 
-#tabla2{
+#tabla2P{
     width: 50%;
     height: 100%;
 }
-#resultados{
+#resultadosP{
     height: 100%;
     width: 95%;
     border-radius: 15px;
     padding: 0.8rem 1.4rem;
     background-color: rgb(231, 231, 231);
 }
-#titulo{
+#tituloP{
     height: 7%;
     font-weight: 700;
     font-size: 27px;
     border-bottom: solid black;
 }
-#tabla-resultados{
+#tabla-resultadosP{
     height: 83%;
     width: 100%;
 }
 
-#botones-peque{
+#botones-pequeP{
     height: 295px;
     width: 100%;
     display: flex;
@@ -104,7 +103,7 @@ nav{
     align-items: center;
     gap: 4rem;
 }
-#cancelar{
+#cancelarP{
     height: 2.5rem;
     width: 11rem;
     border: none;
@@ -115,7 +114,7 @@ nav{
     letter-spacing: 1px;
     font-size: 18px;
 }
-#guardar{
+#guardarP{
     height: 2.5rem;
     width: 11rem;
     border: none;

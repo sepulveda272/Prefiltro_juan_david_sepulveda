@@ -35,11 +35,11 @@ export default function CreatePer() {
 
   return (
     <div>
-      <div id="resultados">
-          <div id="titulo">
+      <div id="resultadosP">
+          <div id="tituloP">
               <h4>Subir Resultados</h4>
           </div>
-          <div id="tabla-resultados">
+          <div id="tabla-resultadosP">
               <form action="" method="post" id="formResultadosPerfil">
                   <table class="table">
                       <thead>
@@ -87,9 +87,9 @@ export default function CreatePer() {
                           </tr>
                       </tbody>
                   </table>
-                  <div id="botones-peque">
-                      <Link to="/" class="btn" id="cancelar">Cancelar</Link>
-                      <button type="button" onClick={postData} class="btnForm" id="guardar">Guardar</button>
+                  <div id="botones-pequeP">
+                      <Link to="/" class="btn" id="cancelarP">Cancelar</Link>
+                      <button type="button" onClick={postData} class="btnForm" id="guardarP">Guardar</button>
                   </div>
               </form>
           </div>

@@ -75,7 +75,6 @@ nav{
     max-height: 80%; /* Ajusta este valor según tus necesidades */
      /* Establecer un overflow para habilitar el scroll */
     overflow-y: auto;
-    border: 1px solid red;
 }
 
 
@@ -104,7 +103,7 @@ nav{
 }
 
 #botones-peque{
-    height: 45px;
+    height: 45px !important; 
     width: 100%;
     display: flex;
     justify-content: center;

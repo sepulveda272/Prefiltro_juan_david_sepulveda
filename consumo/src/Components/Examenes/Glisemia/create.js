@@ -27,27 +27,27 @@ export default function CreateGli() {
 
   return (
     <div>
-      <div id="resultados">
-          <div id="titulo">
+      <div id="resultadosG">
+          <div id="tituloG">
               <h4>Subir Resultados</h4>
           </div>
-          <div id="tabla-resultados">
+          <div id="tabla-resultadosG">
               <form method="post" class="row g-3 formularioG" id="formGlisemia">
                   <div class="col-md-12">
-                    <label for="inputGlisemiaBasal" class="form-label N">Glisemia basal</label>
-                    <input type="text" class="form-control DA" id="inputGlisemiaBasal" value={glisemiaBasal} onChange={(e)=>setglisemiaBasal(e.target.value)}/>
+                    <label for="inputGlisemiaBasal" class="form-label NG">Glisemia basal</label>
+                    <input type="text" class="form-control DAG" id="inputGlisemiaBasal" value={glisemiaBasal} onChange={(e)=>setglisemiaBasal(e.target.value)}/>
                   </div>
                   <div class="col-md-12">
-                    <label for="inputIngestion" class="form-label N">Ingestion</label>
-                    <input type="text" class="form-control DA" id="inputIngestion" value={ingestion} onChange={(e)=>setingestion(e.target.value)}/>
+                    <label for="inputIngestion" class="form-label NG">Ingestion</label>
+                    <input type="text" class="form-control DAG" id="inputIngestion" value={ingestion} onChange={(e)=>setingestion(e.target.value)}/>
                   </div>
                   <div class="col-md-12">
                       <label for="inputIdPaciente" class="form-label N">Id del paciente</label>
-                      <input type="text" class="form-control DA" id="inputIdPaciente" value={idExamenGlisemia} onChange={(e)=>setIdPaciente(e.target.value)}/>
+                      <input type="text" class="form-control DAG" id="inputIdPaciente" value={idExamenGlisemia} onChange={(e)=>setIdPaciente(e.target.value)}/>
                     </div>
-                  <div id="botones-peque">
-                    <Link to="/" className="btn" id="cancelar">Cancelar</Link>
-                    <button type="button" onClick={postData} className="btnForm" id="guardar">Guardar</button>
+                  <div id="botones-pequeG">
+                    <Link to="/" className="btn" id="cancelarG">Cancelar</Link>
+                    <button type="button" onClick={postData} className="btnForm" id="guardarG">Guardar</button>
                   </div>
               </form>
           </div>

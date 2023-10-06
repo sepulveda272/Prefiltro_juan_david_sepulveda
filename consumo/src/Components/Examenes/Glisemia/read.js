@@ -39,14 +39,14 @@ export default function ReadgLISEMIA(){
     return(
         <div>
             <NavbarExamenesss />
-            <div id="informacion">
-                <div id="tabla1">
-                    <div id="botones-grandes">
-                        <Link to="/examenC"><button id="gris">Cuadro Hematico</button></Link>
-                        <Link to="/examenG"><button style={{backgroundColor: "#FFB950", color: "white"}} id="naranja">Glisemia</button></Link>
-                        <Link to="/examenP"><button id="gris">Perfil Lipidico</button></Link>
+            <div id="informacionG">
+                <div id="tabla1G">
+                    <div id="botones-grandesG">
+                        <Link to="/examenC"><button id="grisG">Cuadro Hematico</button></Link>
+                        <Link to="/examenG"><button style={{backgroundColor: "#FFB950", color: "white"}} id="naranjaG">Glisemia</button></Link>
+                        <Link to="/examenP"><button id="grisG">Perfil Lipidico</button></Link>
                     </div>
-                    <div id="nombre-resultado">
+                    <div id="nombre-resultadoG">
                         <table className="table">
                             <thead>
                               <tr>
@@ -71,7 +71,7 @@ export default function ReadgLISEMIA(){
                         </table>
                     </div>
                 </div>
-                <div id="tabla2">
+                <div id="tabla2G">
                     <CreateGli />
                 </div>
             </div>
