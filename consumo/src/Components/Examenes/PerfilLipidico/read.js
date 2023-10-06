@@ -1,15 +1,15 @@
-import '../../navbar/examenes/navbarC.css';
+import '../../navbar/examenes/navbarP.css';
 import axios from 'axios';
 import React,{useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
-import CreateCu from './create';
 import NavbarExamenesss from '../../navbar/navbar';
+import CreatePer from './create';
 
-export default function ReadCuadro(){
+export default function ReadPerfil(){
     const [apiData, setApiData] = useState([]);
 
     useEffect(()=>{
-        axios.get(`http://localhost:5000/api/search/pacientes/Cuadro Hematico`)
+        axios.get(`http://localhost:5000/api/search/pacientes/Perfil Lipidico`)
         .then((res)=>{
             console.log(res.data);
             setApiData(res.data.result);
@@ -42,9 +42,9 @@ export default function ReadCuadro(){
             <div id="informacion">
                 <div id="tabla1">
                     <div id="botones-grandes">
-                        <Link to="/examenC"><button style={{backgroundColor: "#FF7777"}} id="naranja">Cuadro Hematico</button></Link>
+                        <Link to="/examenC"><button id="gris">Cuadro Hematico</button></Link>
                         <Link to="/examenG"><button id="gris">Glisemia</button></Link>
-                        <Link to="/examenP"><button id="gris">Perfil Lipidico</button></Link>
+                        <Link to="/examenP"><button style={{backgroundColor: "#88C14D"}} id="naranja">Perfil Lipidico</button></Link>
                     </div>
                     <div id="nombre-resultado">
                         <table className="table">
@@ -72,7 +72,7 @@ export default function ReadCuadro(){
                     </div>
                 </div>
                 <div id="tabla2">
-                    <CreateCu />
+                    <CreatePer />
                 </div>
             </div>
         </div>

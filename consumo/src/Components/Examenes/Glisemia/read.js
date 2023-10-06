@@ -2,7 +2,6 @@ import '../../navbar/examenes/navbarG.css';
 import axios from 'axios';
 import React,{useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
-import CreateCu from './create';
 import NavbarExamenesss from '../../navbar/navbar';
 import CreateGli from './create';
 
@@ -45,7 +44,7 @@ export default function ReadgLISEMIA(){
                     <div id="botones-grandes">
                         <Link to="/examenC"><button id="gris">Cuadro Hematico</button></Link>
                         <Link to="/examenG"><button style={{backgroundColor: "#FFB950", color: "white"}} id="naranja">Glisemia</button></Link>
-                        <a href="../perfilLipidico/perfil.html"><button id="gris">Perfil Lipidico</button></a>
+                        <Link to="/examenP"><button id="gris">Perfil Lipidico</button></Link>
                     </div>
                     <div id="nombre-resultado">
                         <table className="table">

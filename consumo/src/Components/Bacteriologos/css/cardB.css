@@ -44,9 +44,7 @@
     display: flex;
     justify-content: space-around;
     background-color: #F4F1F1;
-    /* Establecer una altura máxima para la sección */
-    max-height: 676px; /* Ajusta este valor según tus necesidades */
-    /* Establecer un overflow para habilitar el scroll */
+    max-height: 676px;
     overflow-y: auto;
     flex-wrap: wrap;
     gap: 1rem;

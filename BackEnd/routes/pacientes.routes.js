@@ -58,15 +58,15 @@ router.put("/:id",updatePaciente);
      *              - examen
      *              - estado
      *          example: 
-     *              nombre: juan
-     *              edad: 12
-     *              sexo: Hombre
-     *              direccion: mi casa
-     *              celular: 3184606257
-     *              fecha: 2023-08-10
-     *              hora: 12:15
-     *              nombreBacteriologo: juan
-     *              examen: Cuadro Hematico
+     *              nombre: "raul"
+     *              edad: "12"
+     *              sexo: "Hombre"
+     *              direccion: "mi casa"
+     *              celular: "3184606257"
+     *              fecha: "2023-08-10"
+     *              hora: "12:15"
+     *              nombreBacteriologo: "juan David"
+     *              examen: "Cuadro Hematico"
      *              estado: true
      *              
      */

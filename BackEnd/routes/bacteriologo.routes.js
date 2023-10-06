@@ -46,12 +46,12 @@ router.put("/:id",updateBacteriologo);
      *              - imagen
      *              - estado
      *          example: 
-     *              nombre: Alan Kay
-     *              edad: 12
-     *              email: alan@gmail.com
-     *              experiencia: 2
-     *              cedula: 312312312
-     *              imagen: alan.img
+     *              nombre: "Alan Kay"
+     *              edad: "12"
+     *              email: "alan@gmail.com"
+     *              experiencia: "2"
+     *              cedula: "312312312"
+     *              imagen: "https://i.pinimg.com/564x/d1/c4/8e/d1c48ee64225f0f79ae98caa8558f6d9.jpg"
      *              estado: true
      *              
      */
